@@ -14,10 +14,15 @@ import re # Importing the re module for regular expressions
 from csv import writer # Importing the writer class from the csv module for writing CSV files
 
 # Setting path to google service account credentials 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'google_vision_APIs.json'
 
+
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = 'google_vision_APIs.json'   #Akaash
+# os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'API\answer-script-recognition\google_vision_APIs.json'   #Anirudh
 # Setting path to processor and file credentials 
-config_file = "Form_parser/form_parser_config.yaml"
+
+
+config_file = "Form_parser/form_parser_config.yaml"  #Akaash
+# config_file = r"API\answer-script-recognition\Form_parser\form_parser_config.yaml"  #Anirudh
 
 # Loading form parser configuration file
 def load_config(config_file):
@@ -252,8 +257,9 @@ def retrieve_marks_obtained(df_table):
 def update_csv(row_details):
 
     # Create a file object for this file
-    with open('Form_parser/Marks.csv', 'a') as f_object:
- 
+    with open('Form_parser/Marks.csv', 'a') as f_object:  #Akaash
+    # with open(r'API\answer-script-recognition\Form_parser\Marks.csv', 'a') as f_object:  #Anirudh
+
         # Pass this file object to csv.writer()
         # and get a writer object
         writer_object = writer(f_object)
@@ -268,7 +274,8 @@ def update_csv(row_details):
     print('csv file updated successfully')
 
 def main():
-    config_file = "Form_parser/form_parser_config.yaml"
+    config_file = "Form_parser/form_parser_config.yaml" #Akaash
+    # config_file = r"API\answer-script-recognition\Form_parser\form_parser_config.yaml" #Anirudh
     config = load_config(config_file)
 
     PROJECT_ID = config.get("PROJECT_ID")
