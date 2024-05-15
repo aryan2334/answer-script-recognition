@@ -1,5 +1,7 @@
 # Importing the os module for operating system related functionality
 import os 
+# import io
+# import pickle
 # Importing the Document AI library from the Google Cloud documentai_v1 package
 from google.cloud import documentai_v1 as documentai
 # Importing the List and Sequence types from the typing module for type hints
@@ -62,6 +64,14 @@ def online_process(
 
         result = documentai_client.process_document(request=request)
 
+        
+        # Write the document object to a file using pickle
+        # output_file_path = "output_document.pkl"
+        # with io.open(output_file_path, "wb") as output_file:
+        #     pickle.dump(result.document, output_file)
+
+        # print(f"Document dumped to file: {output_file_path}")
+
         # result is the API response
         # result.document stores the document information
         
@@ -69,6 +79,7 @@ def online_process(
         # print(type(result.document))
 
         # <class 'google.cloud.documentai_v1.types.document.Document'>
+        
         return result.document
     
 #  Function to retrive the data from particular table in a image
