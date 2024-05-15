@@ -1,8 +1,10 @@
 # Importing the os module for operating system related functionality
 import os 
+
 # import io
 # import pickle
 # Importing the Document AI library from the Google Cloud documentai_v1 package
+
 from google.cloud import documentai_v1 as documentai
 # Importing the List and Sequence types from the typing module for type hints
 from typing import List, Sequence
@@ -274,6 +276,7 @@ def update_csv(row_details):
     print('csv file updated successfully')
 
 def main():
+    
     config_file = "Form_parser/form_parser_config.yaml" #Akaash
     # config_file = r"API\answer-script-recognition\Form_parser\form_parser_config.yaml" #Anirudh
     config = load_config(config_file)
