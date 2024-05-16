@@ -128,12 +128,13 @@ def retrieve_key_value_pairs(document):
             # Check if the field name starts with "Enrol"
             if field_key.startswith("Enrol"):
                 # If yes, extract the value and store it in enrolment_no
-                enrolment_no = field_value
+                enrolment_no = field_value.replace(" ", "")# Remove  spaces
 
             # Check if the field name starts with "Course Code"
             if field_key.startswith("Course Code"):
                 # If yes, extract the value and store it in course_code
-                course_code = field_value
+                # Remove spaces, replace '(' with 'C', 'B' with 'E'
+                course_code = field_value.replace(" ", "").replace("(", "C").replace("B", "E")
 
             # Check if the field name starts with "Total Marks"
             if field_key.startswith("Total Marks"):
@@ -259,7 +260,7 @@ def retrieve_marks_obtained(df_table):
 def update_csv(row_details):
 
     # Create a file object for this file
-    with open('Form_parser/Marks.csv', 'a') as f_object:  #Akaash
+    with open('Form_parser/Marks.csv', 'a', newline='') as f_object:  #Akaash
     # with open(r'API\answer-script-recognition\Form_parser\Marks.csv', 'a') as f_object:  #Anirudh
 
         # Pass this file object to csv.writer()
@@ -276,7 +277,7 @@ def update_csv(row_details):
     print('csv file updated successfully')
 
 def main():
-    
+
     config_file = "Form_parser/form_parser_config.yaml" #Akaash
     # config_file = r"API\answer-script-recognition\Form_parser\form_parser_config.yaml" #Anirudh
     config = load_config(config_file)
