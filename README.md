@@ -38,10 +38,5 @@ The project utilizes Python programming language along with libraries such as pa
 - Advancements in handwritten response recognition.
 - Real-time analytics and predictive modeling capabilities.
 
-## Contributors:
-- Akaash Gupta Vandanapu
-- Anirudh Dattu
-
-
 ## License:
 This project is licensed under the [License Name] license. See the LICENSE file for details.
